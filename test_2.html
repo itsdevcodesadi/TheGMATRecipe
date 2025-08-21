@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The GMAT Recipe - Score 700+ in 60 Days</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #1b8918;
+            --bg-color: #f7f4ed;
+            --text-dark: #2c3e50;
+            --text-muted: #6c757d;
+            --white: #ffffff;
+            --light-green: rgba(27, 137, 24, 0.1);
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            font-weight: 600;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .btn-primary:hover {
+            background-color: #156b14;
+            border-color: #156b14;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(27, 137, 24, 0.3);
+        }
+        
+        .btn-lg {
+            padding: 18px 40px;
+            font-size: 1.2rem;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--bg-color) 0%, #e8e4d9 100%);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 100%;
+            height: 200%;
+            background: radial-gradient(circle, var(--light-green) 0%, transparent 70%);
+            z-index: 0;
+        }
+        
+        .hero .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero .lead {
+            font-size: 1.3rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+        
+        .countdown-container {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+            margin: 30px 0;
+            border: 2px solid var(--primary-color);
+        }
+        
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .countdown-item {
+            text-align: center;
+            background: var(--light-green);
+            padding: 15px 20px;
+            border-radius: 10px;
+            min-width: 80px;
+        }
+        
+        .countdown-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: block;
+        }
+        
+        .countdown-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background: var(--white);
+        }
+        
+        .feature-card {
+            background: var(--bg-color);
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            height: 100%;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow);
+            border-color: var(--primary-color);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2rem;
+            color: var(--white);
+        }
+        
+        .feature-card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+        
+        /* How it Works */
+        .how-it-works {
+            padding: 80px 0;
+            background: var(--bg-color);
+        }
+        
+        .step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+            background: var(--white);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-right: 25px;
+            flex-shrink: 0;
+        }
+        
+        .step-content h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background: var(--white);
+        }
+        
+        .testimonial-placeholder {
+            background: var(--light-green);
+            border-radius: 15px;
+            padding: 60px 30px;
+            text-align: center;
+            border: 2px dashed var(--primary-color);
+        }
+        
+        /* FAQ */
+        .faq {
+            padding: 80px 0;
+            background: var(--bg-color);
+        }
+        
+        .accordion-item {
+            border: none;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .accordion-button {
+            background: var(--white);
+            color: var(--text-dark);
+            font-weight: 600;
+            padding: 20px 25px;
+        }
+        
+        .accordion-button:not(.collapsed) {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+        
+        .accordion-body {
+            background: var(--white);
+            padding: 20px 25px;
+        }
+        
+        /* Final CTA */
+        .final-cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary-color) 0%, #156b14 100%);
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .final-cta h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .email-form {
+            max-width: 500px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 50px;
+            padding: 10px;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .email-form input {
+            border: none;
+            padding: 15px 25px;
+            border-radius: 50px;
+            flex: 1;
+            font-size: 1.1rem;
+        }
+        
+        .email-form input:focus {
+            outline: none;
+            box-shadow: none;
+        }
+        
+        .email-form button {
+            background: var(--primary-color);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            color: var(--white);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .email-form button:hover {
+            background: #156b14;
+            transform: scale(1.05);
+        }
+        
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+        
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .countdown {
+                gap: 10px;
+            }
+            
+            .countdown-item {
+                min-width: 70px;
+                padding: 10px 15px;
+            }
+            
+            .countdown-number {
+                font-size: 1.5rem;
+            }
+            
+            .step {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .step-number {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            
+            .email-form {
+                flex-direction: column;
+                border-radius: 15px;
+            }
+            
+            .email-form input,
+            .email-form button {
+                border-radius: 10px;
+            }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .success-message {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12 text-center">
+                    <h1>Score 700+ on the GMAT<br><span style="color: #1b8918;">in Just 60 Days</span></h1>
+                    <p class="lead">Built by 99th-percentile scorers, designed for busy professionals who demand results</p>
+                    
+                    <div class="countdown-container">
+                        <h3 style="margin-bottom: 20px; color: #1b8918; font-weight: 700;">⚡ Early Bird Offer Expires In:</h3>
+                        <div class="countdown" id="countdown">
+                            <div class="countdown-item">
+                                <span class="countdown-number" id="days">38</span>
+                                <span class="countdown-label">Days</span>
+                            </div>
+                            <div class="countdown-item">
+                                <span class="countdown-number" id="hours">23</span>
+                                <span class="countdown-label">Hours</span>
+                            </div>
+                            <div class="countdown-item">
+                                <span class="countdown-number" id="minutes">08</span>
+                                <span class="countdown-label">Minutes</span>
+                            </div>
+                            <div class="countdown-item">
+                                <span class="countdown-number" id="seconds">33</span>
+                                <span class="countdown-label">Seconds</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-primary btn-lg pulse" onclick="scrollToSignup()">
+                        <i class="fas fa-rocket me-2"></i>Join Early & Get 20% Off
+                    </button>
+                    
+                    <div class="mt-4">
+                        <small style="color: #6c757d;">🎯 <strong>Limited Time:</strong> Save $200 when you join before launch</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why The GMAT Recipe Works</h2>
+                <p>Everything you need to achieve your target score, designed for maximum efficiency</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                        <h3>Interactive Video Lessons</h3>
+                        <p>Master concepts faster with engaging, bite-sized video content that fits your busy schedule</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h3>Day-by-Day Study Plan</h3>
+                        <p>Never wonder what to study next. Follow our proven 60-day roadmap to success</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>Smart Quizzes</h3>
+                        <p>Instant feedback and adaptive learning that identifies your weak spots automatically</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3>99th Percentile Expertise</h3>
+                        <p>Created by top scorers who know exactly what it takes to achieve elite results</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>Your Path to 700+ in 60 Days</h2>
+                <p>Our systematic approach has helped hundreds of professionals achieve their dream scores</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Take Your Diagnostic Assessment</h3>
+                            <p>We identify your current level and create a personalized study plan targeting your specific weaknesses</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Follow Your Daily Schedule</h3>
+                            <p>Spend just 2-3 hours daily following our structured curriculum designed for working professionals</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Practice with Smart Technology</h3>
+                            <p>Our adaptive quizzing system focuses on your problem areas until you achieve mastery</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Achieve Your Target Score</h3>
+                            <p>Walk into test day confident and prepared to score 700+ on your GMAT exam</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Placeholder -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Success Stories</h2>
+                <p>Join hundreds of professionals who achieved their target scores</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="testimonial-placeholder">
+                        <i class="fas fa-quote-left fa-3x text-success mb-4"></i>
+                        <h3>Real Student Testimonials Coming Soon</h3>
+                        <p class="lead">Our beta testers are currently taking their GMAT exams. Their success stories will be featured here upon launch!</p>
+                        <div class="mt-4">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <span class="ms-2 text-muted">Average rating from beta users</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countdown Timer Section -->
+    <section class="py-5" style="background: #1b8918; color: white;">
+        <div class="container text-center">
+            <h2 class="mb-4">⏰ Don't Miss Your 20% Discount!</h2>
+            <div class="countdown-container" style="background: rgba(255,255,255,0.1); border-color: white;">
+                <div class="countdown" id="countdown2">
+                    <div class="countdown-item" style="background: rgba(255,255,255,0.2);">
+                        <span class="countdown-number" style="color: white;" id="days2">38</span>
+                        <span class="countdown-label" style="color: #f0f0f0;">Days</span>
+                    </div>
+                    <div class="countdown-item" style="background: rgba(255,255,255,0.2);">
+                        <span class="countdown-number" style="color: white;" id="hours2">23</span>
+                        <span class="countdown-label" style="color: #f0f0f0;">Hours</span>
+                    </div>
+                    <div class="countdown-item" style="background: rgba(255,255,255,0.2);">
+                        <span class="countdown-number" style="color: white;" id="minutes2">08</span>
+                        <span class="countdown-label" style="color: #f0f0f0;">Minutes</span>
+                    </div>
+                    <div class="countdown-item" style="background: rgba(255,255,255,0.2);">
+                        <span class="countdown-number" style="color: white;" id="seconds2">33</span>
+                        <span class="countdown-label" style="color: #f0f0f0;">Seconds</span>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-light btn-lg mt-4" onclick="scrollToSignup()" style="color: #1b8918; font-weight: 700;">
+                <i class="fas fa-clock me-2"></i>Secure My Early Bird Discount
+            </button>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Everything you need to know about The GMAT Recipe</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    How can I really score 700+ in just 60 days?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Our method focuses on high-impact strategies and efficient learning techniques developed by 99th-percentile scorers. By targeting your specific weaknesses and following our proven daily schedule, you'll maximize your score improvement in minimal time.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    How much time do I need to study each day?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Our program is designed for busy professionals. You'll need 2-3 hours per day following our structured schedule. The content is optimized for maximum efficiency, so every minute counts toward your score improvement.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    What if I don't reach my target score?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We're so confident in our method that we offer a score improvement guarantee. If you follow our program completely and don't see significant improvement, we'll work with you until you achieve your goals.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    When does the course officially launch?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    The GMAT Recipe launches in just a few days! Early subscribers will get immediate access to our foundation materials and the complete course on launch day, plus lock in their 20% discount.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                    What makes this different from other GMAT prep?
+                                </button>
+                            </h2>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Unlike generic prep courses, The GMAT Recipe is built specifically for busy professionals by 99th-percentile scorers. Our adaptive technology, personalized study plans, and time-efficient approach deliver faster results with less study time.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta" id="signup">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2>Ready to Score 700+ on Your GMAT?</h2>
+                    <p class="lead mb-4">Join early and save 20% off the regular price. Limited time offer!</p>
+                    
+                    <form class="email-form" id="signupForm" onsubmit="handleSignup(event)">
+                        <input type="email" placeholder="Enter your email address" required id="emailInput">
+                        <button type="submit">
+                            <i class="fas fa-rocket me-1"></i>Get Early Access
+                        </button>
+                    </form>
+                    
+                    <div class="success-message" id="successMessage">
+                        <i class="fas fa-check-circle me-2"></i>
+                        <strong>Success!</strong> You're on the list! Check your email for exclusive early bird content.
+                    </div>
+                    
+                    <div class="mt-4">
+                        <small>🔒 Your email is safe with us. No spam, ever.</small><br>
+                        <small>💰 <strong>Early Bird Bonus:</strong> Save $200 + Get exclusive prep materials</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>

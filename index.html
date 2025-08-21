@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The GMAT Recipe - Score 700+ in Just 90 days</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- AOS for animation-->
+
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+
+    <!-- Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/Css/styles.css">
+    <!-- MailerLite Universal -->
+    <script>
+        (function (w, d, e, u, f, l, n) {
+            w[f] = w[f] || function () {
+                (w[f].q = w[f].q || [])
+                    .push(arguments);
+            }, l = d.createElement(e), l.async = 1, l.src = u,
+                n = d.getElementsByTagName(e)[0], n.parentNode.insertBefore(l, n);
+        })
+            (window, document, 'script', 'https://assets.mailerlite.com/js/universal.js', 'ml');
+        ml('account', '1742315');
+    </script>
+    <!-- End MailerLite Universal -->
+
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light  sticky-navbar">
+        <div class="container">
+            <!-- Brand logo linking to home -->
+            <a class="navbar-brand fw-bold" href="{{ url_for('fx_home') }}">
+                <img src="{{ url_for('static', filename='images/logo_black.png') }}" alt="TheGMATRecipe" height="30"
+                    class="d-inline-block align-text-top me-2" />
+            </a>
+
+            <!-- Mobile toggle button for collapsing navbar -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+                aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navigation links and CTA button -->
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <!-- Home link -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#hero">Home</a>
+                    </li>
+
+                    <!-- Why us section link -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#why-us">Why us</a>
+                    </li>
+                    <!-- Features section link -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+
+
+                    <!-- Testimonials section link -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#reviews">Reviews</a>
+                    </li>
+                </ul>
+
+                <!-- Call-to-action button aligned to the right -->
+                <a class="hero-btn ms-lg-3" href="#cta">
+                    Get 20% Off
+                </a>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+
+                <div class="col-lg-6" data-aos="fade-right">
+                    <span class="eyebrow"><i class="bi bi-stars"></i> Early access — save 20%</span>
+
+                    <h1 class="mb-4">
+                        Score 700+ on the GMAT in Just <span class="text-warning">90 Days</span>
+                    </h1>
+
+                    <p class="lead fs-5 mb-4 opacity-90">
+                        Built by 99th-percentile scorers. Designed for <br>busy professionals.
+                    </p>
+
+                    <a href="#cta" class="hero-btn mb-2" data-aos="zoom-in" data-aos-delay="200">Get Early Access</a>
+                    <br>
+
+                    <small class="opacity-75" data-aos="fade-up" data-aos-delay="400">
+                        <i class="fas fa-users me-2"></i>
+                        2,800+ already joined — last few spots left with 20% off.
+                    </small>
+                </div>
+
+                <div class="col-lg-6 text-center" data-aos="fade-left">
+                    <div class="position-relative">
+                        <img src="/assets/Images/hero-section-img.png" alt="Successful GMAT Student"
+                            class="hero-image img-fluid">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+<section id="why-us" class="hero-section section-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center mb-5" data-aos="fade-up">
+        <span class="d-inline-block text-uppercase fw-semibold small text-primary-custom mb-3">
+  How We Help
+</span>
+
+        <h2 class="mb-3">
+          Studying for the GMAT is Hard.  
+          We Make it <span class="text-primary-custom">Simple.</span>
+        </h2>
+        <p class="text-muted lead">
+          A step-by-step plan built for busy professionals to reach 700+—without wasted time.
+        </p>
+      </div>
+    </div>
+    <div class="row align-items-center">
+      <div class="col-lg-6 text-center" data-aos="fade-right">
+        <div class="position-relative">
+          <img src="/assets/Images/why-section-img.png" 
+               alt="Successful GMAT Student"
+               class="hero-image img-fluid" data-aos="zoom-in">
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left">
+        <h4 class="mb-4">
+          Save time. Maximize results. The GMAT Recipe’s proven strategies help busy professionals score higher, faster.
+        </h4>
+        <p class="text-muted lead mb-4 opacity-90">
+          700+ Guarantee | 99th-Percentile Instructors | Tailored for Professionals
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+    <!-- Why This Course Section -->
+<section id="features" class="section-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center mb-5" data-aos="fade-up">
+        <span class="d-inline-block text-uppercase fw-semibold small text-primary-custom mb-3">
+  Core Features
+</span>
+        <h2 class="mb-3">
+          Study Smart. <span class="text-primary-custom">Finish Faster.</span> Score Higher.
+        </h2>
+        <p class="lead text-muted">
+          Everything you need to hit 700+—designed for professionals with limited time.
+        </p>
+      </div>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+      <!-- Card 1 -->
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+        <div class="feature-card text-center">
+          <div class="feature-icon mx-auto" data-aos="zoom-in" data-aos-delay="200">
+            <img src="/assets/Images/notes.svg" alt="">
+          </div>
+          <h4 class="mb-3">Day-by-Day Roadmap</h4>
+          <p class="text-muted">A structured plan that fits into your busy schedule and keeps you on track daily.</p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+        <div class="feature-card core-feature-card text-center">
+          <div class="feature-icon mx-auto" data-aos="zoom-in" data-aos-delay="300">
+            <img src="/assets/Images/lets-icons_video-fill.svg" alt="">
+          </div>
+          <h4 class="mb-3">Interactive Lessons</h4>
+          <p>Engaging videos taught by 99th-percentile scorers—clear, focused, and easy to follow.</p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+        <div class="feature-card text-center">
+          <div class="feature-icon mx-auto" data-aos="zoom-in" data-aos-delay="400">
+            <img src="/assets/Images/quiz.svg" alt="">
+          </div>
+          <h4 class="mb-3">Smart Quizzes</h4>
+          <p class="text-muted">Adaptive practice that pinpoints weaknesses and sharpens skills instantly.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+    <!-- Authority Section -->
+<div class="row section-padding">
+  <div class="col-lg-10 mx-auto">
+    <div class="offer-box text-white rounded-3 p-4 p-lg-5" data-aos="fade-up">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <h3 class="mb-3" data-aos="zoom-in" data-aos-delay="200">
+            ⏳ Early Access Discount — Limited Time Only
+          </h3>
+          <p class="mb-4 opacity-90" data-aos="fade-in" data-aos-delay="300">
+            Join the waitlist today and lock in <strong>20% off</strong> The GMAT Recipe program.
+          </p>
+          <!-- Countdown Timer -->
+          <div id="countdown" class="countdown-timer" data-aos="fade-in" data-aos-delay="500"></div>
+        </div>
+        <div class="col-lg-4 text-center text-lg-end" data-aos="zoom-in" data-aos-delay="600">
+          <a class="cta-btn ms-lg-3" href="#cta">
+            Claim 20% Off Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+    <!-- How It Works Section -->
+<section class="section-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center mb-5" data-aos="fade-up">
+        <h2 class="mb-3">How It <span class="text-primary-custom">Works</span>
+</h2>
+        <p class="lead text-muted">A clear, proven path from day one to your 700+ score</p>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <!-- Step 1 -->
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+        <div class="text-center">
+          <div class="step-number" data-aos="zoom-in" data-aos-delay="200">1</div>
+          <h4 class="mb-3">Enroll</h4>
+          <p class="text-muted">Sign up and unlock your personalized GMAT prep platform instantly.</p>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+        <div class="text-center">
+          <div class="step-number" data-aos="zoom-in" data-aos-delay="300">2</div>
+          <h4 class="mb-3">Follow the Plan</h4>
+          <p class="text-muted">Daily lessons designed to fit your schedule—no wasted effort, only progress.</p>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+        <div class="text-center">
+          <div class="step-number" data-aos="zoom-in" data-aos-delay="400">3</div>
+          <h4 class="mb-3">Practice Smarter</h4>
+          <p class="text-muted">Targeted quizzes adapt to you—strengthen weak spots, master every section.</p>
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+        <div class="text-center">
+          <div class="step-number" data-aos="zoom-in" data-aos-delay="500">4</div>
+          <h4 class="mb-3">Hit 700+</h4>
+          <p class="text-muted">Show up on test day fully prepared and confident to crush your GMAT goals.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+    <!-- Social Proof Section -->
+<section id="reviews" class="section-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center mb-5" data-aos="fade-up">
+        <h2 class="mb-3">
+          Trusted by <span class="text-primary-custom">Ambitious Professionals</span>
+        </h2>
+        <p class="lead text-muted">
+          Join thousands who've achieved their target scores
+        </p>
+      </div>
+    </div>
+
+    <!-- Bootstrap Carousel -->
+    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+
+        <!-- Testimonial 1 -->
+        <div class="carousel-item active">
+          <div class="testimonial-card mx-auto" style="max-width: 600px;">
+            <div class="d-flex align-items-center mb-3">
+              <img src="https://images.unsplash.com/photo-1494790108755-2616b612b601?w=60&h=60&fit=crop&crop=face"
+                alt="Sarah M." class="rounded-circle me-3" width="60" height="60">
+              <div>
+                <div class="fw-bold">Sarah M.</div>
+                <small class="text-muted">Management Consultant</small>
+              </div>
+            </div>
+            <div class="mb-3">
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+            </div>
+            <blockquote class="mb-0">
+              "Went from 650 to <span class='text-primary-custom'>740</span> in just 8 weeks! The day-by-day plan was perfect for my consulting schedule."
+            </blockquote>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="carousel-item">
+          <div class="testimonial-card mx-auto" style="max-width: 600px;">
+            <div class="d-flex align-items-center mb-3">
+              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&h=60&fit=crop&crop=face"
+                alt="David L." class="rounded-circle me-3" width="60" height="60">
+              <div>
+                <div class="fw-bold">David L.</div>
+                <small class="text-muted">Investment Banker</small>
+              </div>
+            </div>
+            <div class="mb-3">
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+            </div>
+            <blockquote class="mb-0">
+              "The interactive lessons made complex concepts click. Got into <span class='text-primary-custom'>Wharton</span> with a 730!"
+            </blockquote>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="carousel-item">
+          <div class="testimonial-card mx-auto" style="max-width: 600px;">
+            <div class="d-flex align-items-center mb-3">
+              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&h=60&fit=crop&crop=face"
+                alt="Jennifer K." class="rounded-circle me-3" width="60" height="60">
+              <div>
+                <div class="fw-bold">Jennifer K.</div>
+                <small class="text-muted">Product Manager</small>
+              </div>
+            </div>
+            <div class="mb-3">
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+            </div>
+            <blockquote class="mb-0">
+              "Finally, a GMAT prep that understands working professionals. Scored <span class='text-primary-custom'>720</span> while working 60+ hours/week."
+            </blockquote>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Carousel Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+
+      <!-- Carousel Indicators -->
+      <div class="carousel-indicators mt-4">
+        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+    <!-- FAQ Section -->
+
+<section class="faq-section section-padding" id="faq">
+  <div class="container">
+    <div class="faq-wrapper mx-auto">
+      <!-- Section heading -->
+      <h2 class="text-center mb-5" data-aos="fade-up">
+        Frequently Asked <span class="text-primary-custom">Questions</span>
+      </h2>
+
+      <!-- Accordion -->
+      <div class="accordion" id="faqAccordion">
+
+        <!-- FAQ 1 -->
+        <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
+          <h2 class="accordion-header" id="faq1">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse1">
+              What is The GMAT Recipe ?
+            </button>
+          </h2>
+          <div id="collapse1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              The GMAT Recipe is a web-based course built for busy professionals, offering a structured, 60-day study plan, interactive lessons, and smart quizzes to maximize your GMAT score.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+          <h2 class="accordion-header" id="faq2">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse2">
+              How is this different from other GMAT prep courses?
+            </button>
+          </h2>
+          <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Unlike traditional courses that take 4–6 months, The GMAT Recipe is designed for busy professionals—focusing on smart, efficient strategies to help you score 700+ in under 90 days.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="accordion-item" data-aos="fade-up" data-aos-delay="300">
+          <h2 class="accordion-header" id="faq3">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse3">
+              Do I need prior GMAT knowledge?
+            </button>
+          </h2>
+          <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              No. The GMAT Recipe works for beginners and repeat test-takers alike, providing a step-by-step roadmap for success.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="accordion-item" data-aos="fade-up" data-aos-delay="400">
+          <h2 class="accordion-header" id="faq4">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse4">
+              When will the course be available?
+            </button>
+          </h2>
+          <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              The GMAT Recipe will launch in the next 3–6 months. Join the waitlist now to secure early access and exclusive benefits.
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- End Accordion -->
+    </div>
+  </div>
+</section>
+
+
+
+
+    <!-- Final CTA Section -->
+<section id="cta" class="cta-section section-padding" data-aos="fade-up" data-aos-duration="1200">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center">
+        <h2 class="mb-4" data-aos="zoom-in" data-aos-delay="200">
+          Ready to Score 700+ in Just 90 days?
+        </h2>
+        <p class="lead mb-5 opacity-90" data-aos="fade-up" data-aos-delay="400">
+          Join the waitlist now to get early access and exclusive GMAT prep bonuses worth $200.
+        </p>
+
+        <!-- Embedded Form -->
+        <div class="ml-embedded" data-form="3wrCIB"></div>
+
+        <small class="opacity-75 text-light" data-aos="fade-up" data-aos-delay="800">
+          <i class="fas fa-users me-2"></i> <span id="count">0</span> ambitious professionals already on the waitlist
+        </small>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer class="py-5 text-light">
+        <div class="container">
+            <div class="row align-items-start">
+
+                <!-- Left: Logo + Tagline + Social -->
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="mb-3">
+                        <i class="fas fa-graduation-cap me-2"></i> The GMAT Recipe
+                    </h5>
+                    <p class="small">
+                        Helping busy professionals achieve 700+ GMAT scores in 90 days or less.
+                    </p>
+                    <div>
+                        <a href="#" class="text-light me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-light me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-light me-3"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-light"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Center: Quick Links -->
+                <div class="col-md-4 mb-4 mb-md-0 text-md-center">
+                    <h6 class="fw-bold mb-3">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#features" class="text-light text-decoration-none d-block mb-2">Features</a></li>
+                        <li><a href="#faq" class="text-light text-decoration-none d-block mb-2">FAQ</a></li>
+                        <li><a href="#cta" class="text-light text-decoration-none d-block mb-2">Get Started</a></li>
+                        <li><a href="#about" class="text-light text-decoration-none d-block">About Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Right: Contact -->
+                <div class="col-md-4 text-md-end">
+                    <h6 class="fw-bold mb-3">Contact Us</h6>
+                    <p class="mb-1">Have questions? Reach out at:</p>
+                    <a href="mailto:support@gmatrecipe.com" class="text-light text-decoration-none fw-semibold">
+                        support@gmatrecipe.com
+                    </a>
+                </div>
+            </div>
+
+            <!-- Bottom Copyright -->
+            <div class="border-top border-secondary pt-4 mt-4 text-center">
+                <p class="mb-0 small">&copy; 2025 The GMAT Recipe. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/Javascript/main.js"></script>
+
+    <!-- AOS for animation -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,   // animation duration (ms)
+            easing: "ease-out-quart", // smooth easing
+            once: true       // animate only once
+        });
+    </script>
+
+</body>
+
+</html>

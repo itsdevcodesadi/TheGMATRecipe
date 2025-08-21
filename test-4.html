@@ -1,0 +1,689 @@
+Here’s a more polished, professional landing page with refined typography, spacing, accents, and a premium look—fully responsive, Bootstrap-only, and with a working countdown.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>The GMAT Recipe — 700+ in 60 Days</title>
+	<meta name="description" content="The GMAT Recipe: Web-based GMAT prep designed for busy professionals. Join early and get 20% off." />
+
+	<!-- Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+	<!-- Bootstrap Icons -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+
+	<style>
+		:root{
+			--brand: #1b8918;
+			--brand-600: #176f15;
+			--brand-700: #125911;
+			--bg: #f7f4ed;
+			--ink: #121212;
+			--muted: #667085;
+			--surface: #ffffff;
+			--radius-lg: 18px;
+			--radius-md: 14px;
+			--shadow-sm: 0 8px 20px rgba(18, 18, 18, 0.06);
+			--shadow-md: 0 16px 40px rgba(27, 137, 24, 0.10);
+			--bs-primary: var(--brand);
+			--bs-primary-rgb: 27,137,24;
+		}
+
+		html{ scroll-behavior:smooth; }
+		body{
+			font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
+			background: var(--bg);
+			color: var(--ink);
+			letter-spacing: .1px;
+		}
+
+		/* Smooth anchor offset for sticky navbar */
+		[id]{
+			scroll-margin-top: 88px;
+		}
+
+		/* Navbar */
+		.navbar{
+			background: rgba(255,255,255,.9);
+			backdrop-filter: saturate(160%) blur(10px);
+			border-bottom: 1px solid rgba(0,0,0,.06);
+		}
+		.navbar-brand{
+			font-weight: 800;
+			color: var(--brand);
+			letter-spacing: .2px;
+		}
+		.navbar .nav-link{
+			color: #1f2937;
+			font-weight: 500;
+		}
+		.navbar .nav-link:hover,
+		.navbar .nav-link:focus,
+		.navbar .nav-link.active{
+			color: var(--brand);
+		}
+		.navbar .btn{
+			border-radius: 999px;
+		}
+
+		/* Buttons */
+		.btn{
+			font-weight: 700;
+			letter-spacing: .2px;
+		}
+		.btn-primary{
+			--bs-btn-bg: var(--brand);
+			--bs-btn-border-color: var(--brand);
+			--bs-btn-hover-bg: var(--brand-600);
+			--bs-btn-hover-border-color: var(--brand-600);
+			--bs-btn-active-bg: var(--brand-700);
+			--bs-btn-active-border-color: var(--brand-700);
+			box-shadow: 0 8px 24px rgba(27,137,24,.18);
+		}
+		.btn-outline-primary{
+			--bs-btn-color: var(--brand);
+			--bs-btn-border-color: var(--brand);
+			--bs-btn-hover-bg: var(--brand);
+			--bs-btn-hover-border-color: var(--brand);
+			--bs-btn-active-bg: var(--brand-700);
+			--bs-btn-active-border-color: var(--brand-700);
+		}
+
+		/* Section spacing */
+		section{ padding: 80px 0; }
+		.section-heading{
+			font-weight: 800;
+			letter-spacing: .2px;
+		}
+		.section-subtitle{
+			color: var(--muted);
+		}
+
+		/* Hero */
+		.hero{
+			padding: 96px 0 64px;
+			position: relative;
+		}
+		.hero-bg{
+			position: absolute;
+			inset: 0;
+			z-index: -1;
+			background:
+				radial-gradient(800px 240px at 10% -10%, rgba(27,137,24,.12), transparent 60%),
+				radial-gradient(600px 220px at 90% 0%, rgba(27,137,24,.10), transparent 60%);
+		}
+		.hero .eyebrow{
+			display:inline-flex;
+			align-items:center;
+			gap:8px;
+			padding:6px 12px;
+			border:1px solid #d9f0d8;
+			background:#edf9ed;
+			border-radius:999px;
+			color:var(--brand);
+			font-weight:700;
+			font-size:.92rem;
+		}
+		.hero h1{
+			font-weight: 900;
+			line-height: 1.06;
+			letter-spacing: .2px;
+		}
+		.hero .lead{
+			color:#374151;
+		}
+		.device{
+			background: linear-gradient(180deg,#ffffff,#f3fff3);
+			border: 1px solid rgba(0,0,0,.06);
+			border-radius: var(--radius-lg);
+			box-shadow: var(--shadow-md);
+			min-height: 360px;
+			position: relative;
+			overflow: hidden;
+		}
+		.device .float-badge{
+			position:absolute;
+			top:16px; right:16px;
+			background: var(--brand);
+			color:#fff;
+			padding:8px 12px;
+			border-radius: 999px;
+			font-weight:800;
+			box-shadow: 0 12px 30px rgba(27,137,24,.28);
+			font-size:.9rem;
+		}
+		.device .mock{
+			position:absolute; inset:0;
+			padding:24px;
+			display:grid; place-items:center;
+		}
+		.mock-card{
+			background:#fff;
+			border:1px solid rgba(0,0,0,.06);
+			border-radius: 14px;
+			padding: 20px;
+			width:min(92%,560px);
+			box-shadow: var(--shadow-sm);
+		}
+		.progress-lite{
+			height: 10px;
+			border-radius: 999px;
+			background: #e5e7eb;
+			margin-bottom: 10px;
+		}
+		.progress-lite.filled{
+			background: linear-gradient(90deg, var(--brand), #22c55e);
+		}
+
+		/* Feature cards */
+		.feature-card{
+			background: var(--surface);
+			border: 1px solid rgba(0,0,0,.06);
+			border-radius: var(--radius-md);
+			padding: 22px;
+			height:100%;
+			transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+			position:relative;
+		}
+		.feature-card::after{
+			content:"";
+			position:absolute; inset:0;
+			border-radius: inherit;
+			padding:1px; pointer-events:none;
+			background: linear-gradient(180deg, rgba(27,137,24,.28), rgba(27,137,24,0));
+			-webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+			-webkit-mask-composite: xor; mask-composite: exclude;
+		}
+		.feature-card:hover{
+			transform: translateY(-4px);
+			box-shadow: var(--shadow-md);
+			border-color: rgba(27,137,24,.25);
+		}
+		.icon-pill{
+			width: 46px; height: 46px;
+			display:grid; place-items:center;
+			border-radius: 12px;
+			background: #eaf7ea;
+			color: var(--brand);
+			font-size: 1.25rem;
+		}
+
+		/* Countdown */
+		.countdown-wrap{
+			background:#fff;
+			border:1px solid rgba(0,0,0,.06);
+			border-radius: var(--radius-lg);
+			padding: 28px;
+			box-shadow: var(--shadow-md);
+			text-align:center;
+		}
+		.countdown-label{
+			text-transform: uppercase;
+			color: var(--muted);
+			font-weight: 700;
+			letter-spacing:.12em;
+			font-size:.85rem;
+		}
+		.countdown{
+			font-weight: 900;
+			color: #0b3c0a;
+			font-size: clamp(1.6rem, 3.2vw, 2.5rem);
+			letter-spacing: .5px;
+			margin: 6px 0 4px;
+		}
+
+		/* How it works */
+		.step{
+			background: var(--surface);
+			border:1px dashed rgba(27,137,24,.35);
+			border-radius: var(--radius-md);
+			padding: 22px;
+			height:100%;
+		}
+		.step-num{
+			width: 36px; height: 36px;
+			border-radius: 999px;
+			display:grid; place-items:center;
+			background: var(--brand);
+			color:#fff;
+			font-weight: 800;
+			margin-right: 12px;
+		}
+
+		/* CTA */
+		.cta{
+			background: linear-gradient(180deg, #ffffff, #f5fff5);
+			border: 1px solid rgba(0,0,0,.06);
+			border-radius: var(--radius-lg);
+			padding: 28px;
+			box-shadow: var(--shadow-md);
+		}
+		.trust{ color: var(--muted); }
+
+		/* Footer */
+		footer{
+			background:#fff;
+			border-top:1px solid rgba(0,0,0,.06);
+			padding: 40px 0;
+		}
+		footer a{ color:#374151; text-decoration:none; }
+		footer a:hover{ color:var(--brand); text-decoration:underline; }
+
+		/* Forms */
+		.form-control:focus{
+			border-color: var(--brand);
+			box-shadow: 0 0 0 .2rem rgba(27,137,24,.15);
+		}
+
+		/* Utilities */
+		.badge-soft{
+			background:#edf9ed;
+			color:var(--brand);
+			border:1px solid #d9f0d8;
+			border-radius: 999px;
+			font-weight:700;
+		}
+	</style>
+</head>
+<body>
+	<!-- Navbar -->
+	<nav class="navbar navbar-expand-lg navbar-light sticky-top">
+		<div class="container">
+			<a class="navbar-brand d-flex align-items-center" href="#">
+				<i class="bi bi-mortarboard-fill me-2"></i> The GMAT Recipe
+			</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="mainNav">
+				<ul class="navbar-nav ms-auto align-items-lg-center">
+					<li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+					<li class="nav-item"><a class="nav-link" href="#how-it-works">How It Works</a></li>
+					<li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+					<li class="nav-item ms-lg-3">
+						<a class="btn btn-sm btn-primary px-3" href="#signup">Sign Up</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<main>
+		<!-- Hero -->
+		<section class="hero">
+			<div class="hero-bg"></div>
+			<div class="container">
+				<div class="row align-items-center g-5">
+					<div class="col-12 col-lg-6">
+						<span class="eyebrow"><i class="bi bi-stars"></i> Early access — save 20%</span>
+						<h1 class="display-5 mt-3">Score 700+ on the GMAT in Just 60 Days</h1>
+						<p class="lead mt-3">Built by 99th-percentile scorers. Designed for busy professionals.</p>
+						<div class="d-flex flex-wrap gap-2 mt-4">
+							<a href="#signup" class="btn btn-primary btn-lg">Join Early & Get 20% Off</a>
+							<a href="#features" class="btn btn-outline-primary btn-lg">Explore Features</a>
+						</div>
+						<div class="d-flex flex-wrap gap-3 mt-4 text-muted">
+							<span class="d-flex align-items-center"><i class="bi bi-check2-circle text-success me-2"></i> Day-by-day study plan</span>
+							<span class="d-flex align-items-center"><i class="bi bi-check2-circle text-success me-2"></i> Smart quizzes</span>
+						</div>
+					</div>
+					<div class="col-12 col-lg-6">
+						<div class="device">
+							<div class="float-badge"><i class="bi bi-trophy-fill me-1"></i> 99th Percentile</div>
+							<div class="mock">
+								<div class="mock-card w-100">
+									<div class="d-flex justify-content-between align-items-center">
+										<div class="fw-bold">Your 60-Day Plan</div>
+										<span class="badge badge-soft">Day 12</span>
+									</div>
+									<div class="mt-3">
+										<div class="progress-lite filled" style="width:78%"></div>
+										<div class="progress-lite" style="width:95%"></div>
+										<div class="progress-lite" style="width:62%"></div>
+									</div>
+									<div class="d-flex align-items-center justify-content-between mt-3">
+										<div class="d-flex align-items-center text-success">
+											<i class="bi bi-graph-up-arrow me-2"></i>
+											<strong>Quant +42</strong>
+										</div>
+										<button class="btn btn-sm btn-primary">Continue Lesson</button>
+									</div>
+									<hr class="my-3" />
+									<div class="d-flex align-items-center gap-3">
+										<div class="icon-pill"><i class="bi bi-collection-play"></i></div>
+										<div>
+											<div class="fw-semibold">Interactive Video: DS Strategies</div>
+											<small class="text-muted">Adaptive quizzes with instant feedback</small>
+										</div>
+									</div>
+								</div>
+								<small class="text-muted mt-2">Illustrative mockup</small>
+							</div>
+						</div>
+					</div>
+				</div><!-- row -->
+			</div>
+		</section>
+
+		<!-- Features -->
+		<section id="features">
+			<div class="container">
+				<div class="text-center mb-4">
+					<h2 class="section-heading">What You'll Get</h2>
+					<p class="section-subtitle">Everything you need to hit a 700+ score—no fluff.</p>
+				</div>
+				<div class="row g-4">
+					<div class="col-12 col-md-6 col-lg-3">
+						<div class="feature-card">
+							<div class="d-flex align-items-center gap-3">
+								<div class="icon-pill"><i class="bi bi-collection-play"></i></div>
+								<h6 class="m-0">Interactive Video Lessons</h6>
+							</div>
+							<p class="text-muted mt-3 mb-0">Bite-sized, high-yield modules with in-video practice.</p>
+						</div>
+					</div>
+					<div class="col-12 col-md-6 col-lg-3">
+						<div class="feature-card">
+							<div class="d-flex align-items-center gap-3">
+								<div class="icon-pill"><i class="bi bi-calendar2-check"></i></div>
+								<h6 class="m-0">Day-by-Day Study Plan</h6>
+							</div>
+							<p class="text-muted mt-3 mb-0">A focused 60-day roadmap tailored to your schedule.</p>
+						</div>
+					</div>
+					<div class="col-12 col-md-6 col-lg-3">
+						<div class="feature-card">
+							<div class="d-flex align-items-center gap-3">
+								<div class="icon-pill"><i class="bi bi-robot"></i></div>
+								<h6 class="m-0">Smart Quizzes with Feedback</h6>
+							</div>
+							<p class="text-muted mt-3 mb-0">Adaptive questions + instant insights to fix weak spots.</p>
+						</div>
+					</div>
+					<div class="col-12 col-md-6 col-lg-3">
+						<div class="feature-card">
+							<div class="d-flex align-items-center gap-3">
+								<div class="icon-pill"><i class="bi bi-award-fill"></i></div>
+								<h6 class="m-0">Built by 99th-Percentile Scorers</h6>
+							</div>
+							<p class="text-muted mt-3 mb-0">Proven strategies from top scorers and instructors.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Countdown -->
+		<section id="countdown">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-12 col-lg-10">
+						<div class="countdown-wrap">
+							<div class="countdown-label">Launch Offer Ends In</div>
+							<div id="countdownTimer" class="countdown" aria-live="polite">—</div>
+							<p class="section-subtitle mb-3">Join before launch and save 20% for life.</p>
+							<div class="d-flex justify-content-center gap-2">
+								<a href="#signup" class="btn btn-primary btn-lg">Sign Up Now & Get 20% Off</a>
+								<a href="#faq" class="btn btn-outline-primary btn-lg">Read FAQ</a>
+							</div>
+							<small class="text-muted d-block mt-2">Limited early-access spots available.</small>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- How It Works -->
+		<section id="how-it-works">
+			<div class="container">
+				<div class="text-center mb-4">
+					<h2 class="section-heading">How It Works</h2>
+					<p class="section-subtitle">Simple, focused, and built for real schedules.</p>
+				</div>
+				<div class="row g-4">
+					<div class="col-12 col-md-4">
+						<div class="step">
+							<div class="d-flex align-items-center mb-2">
+								<div class="step-num">1</div>
+								<h6 class="m-0">Get Your Study Plan</h6>
+							</div>
+							<p class="text-muted mb-0">Answer a few questions and receive a tailored 60-day plan.</p>
+						</div>
+					</div>
+					<div class="col-12 col-md-4">
+						<div class="step">
+							<div class="d-flex align-items-center mb-2">
+								<div class="step-num">2</div>
+								<h6 class="m-0">Watch Lessons & Take Quizzes</h6>
+							</div>
+							<p class="text-muted mb-0">Follow daily lessons and adaptive quizzes with instant feedback.</p>
+						</div>
+					</div>
+					<div class="col-12 col-md-4">
+						<div class="step">
+							<div class="d-flex align-items-center mb-2">
+								<div class="step-num">3</div>
+								<h6 class="m-0">Score 700+ With Confidence</h6>
+							</div>
+							<p class="text-muted mb-0">Apply proven strategies and walk into test day ready.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- FAQ -->
+		<section id="faq">
+			<div class="container">
+				<div class="text-center mb-4">
+					<h2 class="section-heading">Frequently Asked Questions</h2>
+					<p class="section-subtitle">Have more questions? We’ve got answers.</p>
+				</div>
+				<div class="row justify-content-center">
+					<div class="col-12 col-lg-10">
+						<div class="accordion accordion-flush" id="faqAccordion">
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="q1">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a1" aria-expanded="false" aria-controls="a1">
+										How is The GMAT Recipe different from other prep courses?
+									</button>
+								</h2>
+								<div id="a1" class="accordion-collapse collapse" aria-labelledby="q1" data-bs-parent="#faqAccordion">
+									<div class="accordion-body">
+										We focus on a streamlined 60-day plan, high-yield content, and adaptive quizzes that target your weaknesses—built by 99th-percentile scorers for busy professionals.
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="q2">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a2" aria-expanded="false" aria-controls="a2">
+										What’s included in the early access offer?
+									</button>
+								</h2>
+								<div id="a2" class="accordion-collapse collapse" aria-labelledby="q2" data-bs-parent="#faqAccordion">
+									<div class="accordion-body">
+										You’ll lock in 20% off your subscription for life, plus get early access to upcoming features and priority support.
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="q3">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a3" aria-expanded="false" aria-controls="a3">
+										How much time should I plan to study each day?
+									</button>
+								</h2>
+								<div id="a3" class="accordion-collapse collapse" aria-labelledby="q3" data-bs-parent="#faqAccordion">
+									<div class="accordion-body">
+										Most learners schedule 60–90 minutes per day. The day-by-day plan keeps you focused and efficient.
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="q4">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a4" aria-expanded="false" aria-controls="a4">
+										Do you cover both Quant and Verbal?
+									</button>
+								</h2>
+								<div id="a4" class="accordion-collapse collapse" aria-labelledby="q4" data-bs-parent="#faqAccordion">
+									<div class="accordion-body">
+										Yes. Our curriculum includes Quant, Verbal, and test-taking strategy modules designed to maximize your overall score.
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="q5">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a5" aria-expanded="false" aria-controls="a5">
+										When does the course launch?
+									</button>
+								</h2>
+								<div id="a5" class="accordion-collapse collapse" aria-labelledby="q5" data-bs-parent="#faqAccordion">
+									<div class="accordion-body">
+										In a few days! Join the list today to secure your 20% early-access discount before launch.
+									</div>
+								</div>
+							</div>
+						</div><!-- /accordion -->
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Final CTA / Signup -->
+		<section id="signup">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-12 col-lg-8">
+						<div class="cta">
+							<div class="text-center">
+								<h2 class="section-heading">Join The GMAT Recipe Today</h2>
+								<p class="section-subtitle mb-4">Get notified at launch and lock in your 20% discount.</p>
+							</div>
+							<form id="signupForm" class="row g-2 g-sm-3 justify-content-center">
+								<div class="col-12 col-sm-8">
+									<label for="email" class="visually-hidden">Email</label>
+									<input id="email" name="email" type="email" class="form-control form-control-lg" placeholder="Enter your email" required />
+								</div>
+								<div class="col-12 col-sm-4 d-grid">
+									<button id="submitBtn" type="submit" class="btn btn-primary btn-lg">Get Early Access</button>
+								</div>
+								<div class="col-12 text-center">
+									<small class="trust"><i class="bi bi-shield-check me-1"></i>We respect your inbox. No spam.</small>
+								</div>
+								<div id="formMessage" class="col-12 text-center mt-2" role="status" aria-live="polite"></div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<!-- Footer -->
+	<footer>
+		<div class="container">
+			<div class="row align-items-center gy-3">
+				<div class="col-12 col-md">
+					<small class="text-muted">© <span id="year"></span> The GMAT Recipe. All rights reserved.</small>
+				</div>
+				<div class="col-12 col-md-auto">
+					<div class="d-flex gap-3">
+						<a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+						<a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+						<a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+						<span class="mx-2 text-muted">|</span>
+						<a href="#">Privacy</a>
+						<a href="#">Terms</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Bootstrap JS Bundle -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+	<script>
+		// Year in footer
+		document.getElementById("year").textContent = new Date().getFullYear();
+
+		// Countdown: persist a deadline ~4 days from first visit
+		(function () {
+			const el = document.getElementById("countdownTimer");
+			const KEY = "gmat_recipe_deadline_ms";
+			const FOUR_DAYS = 4 * 24 * 60 * 60 * 1000;
+
+			function ensureDeadline(){
+				const now = Date.now();
+				const saved = Number(localStorage.getItem(KEY) || 0);
+				if (saved && saved > now) return saved;
+				const next = now + FOUR_DAYS;
+				try { localStorage.setItem(KEY, String(next)); } catch (e) {}
+				return next;
+			}
+
+			const deadline = ensureDeadline();
+
+			function fmt(ms){
+				if (ms <= 0) return "0d 0h 0m 0s";
+				const s = Math.floor(ms / 1000);
+				const d = Math.floor(s / 86400);
+				const h = Math.floor((s % 86400) / 3600);
+				const m = Math.floor((s % 3600) / 60);
+				const sec = s % 60;
+				return d + "d " + h + "h " + m + "m " + sec + "s";
+			}
+
+			function tick(){
+				el.textContent = fmt(deadline - Date.now());
+			}
+
+			tick();
+			const id = setInterval(() => {
+				tick();
+				if (deadline - Date.now() <= 0) clearInterval(id);
+			}, 1000);
+		})();
+
+		// Email signup (demo)
+		(function () {
+			const form = document.getElementById("signupForm");
+			const email = document.getElementById("email");
+			const btn = document.getElementById("submitBtn");
+			const msg = document.getElementById("formMessage");
+
+			function setMessage(text, type){
+				msg.className = "col-12 text-center mt-2";
+				if (type === "success") msg.classList.add("text-success");
+				else if (type === "error") msg.classList.add("text-danger");
+				else msg.classList.add("text-muted");
+				msg.textContent = text;
+			}
+
+			form.addEventListener("submit", function(e){
+				e.preventDefault();
+				if (!email.checkValidity()){
+					setMessage("Please enter a valid email address.", "error");
+					email.focus();
+					return;
+				}
+				btn.disabled = true;
+				setMessage("Submitting...", "muted");
+				setTimeout(() => {
+					// TODO: Replace with real API call
+					setMessage("You're in! Check your inbox for confirmation.", "success");
+					btn.disabled = false;
+					form.reset();
+				}, 900);
+			});
+		})();
+	</script>
+</body>
+</html>
+```
