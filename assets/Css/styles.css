@@ -1,5 +1,5 @@
 :root {
-  --primary-color: #FED966;
+  --primary-color: #FFDB58;
   --accent-orange: #f97316;
   --secondary-teal: #0d9488;
   --bg-light: #f9fafb;
@@ -94,15 +94,25 @@ small {
   position: sticky;
   top: 0;
   z-index: 1030;
+  
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: rgba(255, 223, 94, 0.25);
 }
+
+.sticky-navbar.scrolled {
+  background: var(--primary-color) ;/* your primary color from root */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* optional shadow */
+}
+
 
 .navbar-nav {
   gap: 1.5rem; /* spacing between nav links */
 }
 
+
 .hero-btn {
   padding: 8px 16px;
-  background-color: #28a745; /* example color */
+  background-color: var(--primary-color); /* example color */
   color: #fff;
   border-radius: 6px;
   text-decoration: none;
@@ -111,7 +121,7 @@ small {
 }
 
 .hero-btn:hover {
-  background-color: #218838;
+  background-color: var(--primary-color);
 }
 
 
@@ -122,7 +132,16 @@ small {
   align-items: center;
   justify-content: center;
   text-align: center;
+
+  /* subtle gradient background */
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 223, 94, 0.25) 0%,   /* soft pastel yellow at top */
+    rgba(255, 223, 94, 0.10) 40%,  /* lighter yellow mid */
+    rgba(255, 223, 94, 0) 100%     /* fades into white */
+  );
 }
+
 
 .hero-section p {
   font-size: 18px !important;
@@ -174,9 +193,9 @@ background: linear-gradient(to top, #FBFBFE 0%, #ffffff 100%);
 }
 
 .hero-btn:hover {
-  background: #166d14; /* Darker shade on hover */
+  background: #F4BB44; /* Darker shade on hover */
   transform: translateY(-3px);
-  box-shadow: 0 12px 28px rgba(27, 137, 24, 0.45);
+  
 }
 
 .btn-primary-custom {
@@ -302,29 +321,39 @@ background: linear-gradient(to top, #FBFBFE 0%, #ffffff 100%);
 
 
 .offer-box {
-  margin-top: -130px; /* adjust value until it looks good */
   position: relative;
-  z-index: 2; /* keep it above other elements */
-  background-color: #FFBF00;
-  color: #222222 ;
   border-radius: 19px;
   padding: 28px 70px 35px 70px;
+  background: #FFBF00;
+  overflow: hidden; /* keeps circles inside */
 }
 
+.offer-box .circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.5; /* stronger visibility */
+  z-index: 0; /* keep behind text */
+}
+
+.offer-box .content {
+  position: relative;
+  z-index: 2; /* keeps text/buttons above circles */
+}
+
+/* optional gradient glows */
 .offer-box::before,
 .offer-box::after {
   content: "";
   position: absolute;
   border-radius: 50%;
-  filter: blur(60px);
-  opacity: 0.4;
+  opacity: 0.5;
   z-index: 0;
 }
 
 .offer-box::before {
   width: 180px;
   height: 180px;
-  background: radial-gradient(circle at center, #ff6ec4, #7873f5);
+background: radial-gradient(circle at center, #FFAA33 20%, #FDDA0D 40%, #ffffff 100%);
   top: -60px;
   left: -60px;
 }
@@ -332,45 +361,29 @@ background: linear-gradient(to top, #FBFBFE 0%, #ffffff 100%);
 .offer-box::after {
   width: 220px;
   height: 220px;
-  background: radial-gradient(circle at center, #fbc531, #e84118);
+  background: radial-gradient(circle at center, #FFAA33, #ffffff);
   bottom: -80px;
   right: -80px;
 }
 
-
-.offer-box .circle {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(70px);
-  opacity: 0.35;
-  z-index: 0;
-}
-
-
-
+/* actual floating circles */
 .circle-1 {
   width: 150px;
   height: 150px;
-  background: radial-gradient(circle, #ff9a9e, #fad0c4);
+background: radial-gradient(circle at center, #FFAA33, #ffffff);
   top: -50px;
-  left: 20%;
+  left: 30%;
 }
 
 .circle-2 {
   width: 200px;
   height: 200px;
-  background: radial-gradient(circle, #a18cd1, #fbc2eb);
-  bottom: -60px;
-  right: 10%;
+  background: radial-gradient(circle at center, #FFAA33 20%, #FDDA0D 60%,#FADA5E 80%, #ffffff 100%);
+  bottom: -100px;
+  right: 40%;
 }
 
-.circle-3 {
-  width: 120px;
-  height: 120px;
-  background: radial-gradient(circle, #f6d365, #fda085);
-  top: 30%;
-  left: -40px;
-}
+
 
 
 .offer-box-btn {
@@ -416,7 +429,7 @@ background: linear-gradient(to top, #FBFBFE 0%, #ffffff 100%);
 
 
 /* Countdown Styling */
-.countdown-timer {
+/* .countdown-timer {
   display: flex;
   gap: 12px;
   margin-top: 10px;
@@ -440,7 +453,7 @@ background: linear-gradient(to top, #FBFBFE 0%, #ffffff 100%);
   font-weight: 500;
   margin-top: 4px;
   color: #333;
-}
+} */
 
 /* CTA Button */
 .cta-btn {
@@ -456,7 +469,7 @@ background: linear-gradient(to top, #FBFBFE 0%, #ffffff 100%);
 }
 
 .cta-btn:hover {
-  background: #f7f4ed;
+  background: #F4BB44;
   transform: translateY(-3px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
@@ -500,7 +513,37 @@ background: linear-gradient(to top, #FBFBFE 0%, #ffffff 100%);
 
 .cta-section {
   background-color: var(--primary-color);
-  color: #222222
+  color: #222222;
+    position: relative;
+  padding: 28px 70px 35px 70px;
+  overflow: hidden; /* keeps circles inside */
+}
+
+
+/* optional gradient glows */
+.cta-section::before,
+.cta-section::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.cta-section::before {
+  width: 300px;
+  height: 300px;
+background: radial-gradient(circle at center, #FFAA33 20%, #FDDA0D 40%, #ffffff 100%);
+  top: 50px;
+  left: -60px;
+}
+
+.cta-section::after {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle at center, #FFAA33, #ffffff);
+  bottom: -80px;
+  right: -80px;
 }
 
 /* ========== FAQ SECTION STYLES ========== */
