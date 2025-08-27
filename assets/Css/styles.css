@@ -326,6 +326,7 @@ background: linear-gradient(to top, #FBFBFE 0%, #ffffff 100%);
   padding: 28px 70px 35px 70px;
   background: #FFBF00;
   overflow: hidden; /* keeps circles inside */
+  margin-top: -130px;
 }
 
 .offer-box .circle {
